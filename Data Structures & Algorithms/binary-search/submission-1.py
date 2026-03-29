@@ -1,0 +1,10 @@
+import bisect
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        index = bisect.bisect_left(nums, target) # this finds index where x >= target
+        if index < len(nums):
+            if nums[index] == target:
+                return index
+            else:
+                return -1
+        return -1
